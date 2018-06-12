@@ -12,7 +12,7 @@ def menu(title, choices):
 
 def item_chosen(button, choice):
     response = urwid.Text([u'You chose ', choice, u'\n'])
-    attrmap(urwid.Button("Back", on_press=menu))
+    urwid.AttrMap(urwid.Button("Back", on_press=menu))
 
 def exit_program(button):
     raise urwid.ExitMainLoop()
