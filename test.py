@@ -13,10 +13,12 @@ def menu(title, choices):
 def item_chosen(button, choice):
     response = urwid.Text([u'You chose ', choice, u'\n'])
     done = urwid.Button(u'Ok')
-    urwid.connect_signal(done, 'click', menu, choices)
+    urwid.connect_signal(done, 'click', main_menu)
     main.original_widget = urwid.Filler(urwid.Pile([response,
         urwid.AttrMap(done, None, focus_map='reversed')]))
 
+def main_menu(*args):
+    main.original_widget = menu(title, choices)
 
 def exit_program(button):
     raise urwid.ExitMainLoop()
