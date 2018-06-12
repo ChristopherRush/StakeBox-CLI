@@ -18,7 +18,7 @@ def item_chosen(button, choice):
         urwid.AttrMap(done, None, focus_map='reversed')]))
 
 def main_menu(*args):
-    main.original_widget = menu(title, choices)
+    main.original_widget = menu("Main Menu", choices)
 
 def exit_program(button):
     raise urwid.ExitMainLoop()
